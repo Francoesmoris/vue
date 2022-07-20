@@ -43,7 +43,7 @@ methods:{
         payload.cantidadCarrito > 0?payload.cantidadCarrito--:null;
         this.precioTotal -= payload.precio
         }, 
-    carroLocal(newObject){
+    carroLocal1(newObject){
     this.$emit("emitActualizarCarritoPrincipal", newObject)
     },    
     },
