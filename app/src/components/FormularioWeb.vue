@@ -30,7 +30,8 @@
               <input type="password" class="form-control" @keyup="validarPassword" v-model="usuario.password">
             </div>
              <div class="col-md-12 mb-2" v-if='mensajePassword != ""'>
-                <p class="errorForm">{{ mensajePassword }}</p>
+                <p class="errorForm" >{{ mensajePassword }}</p>
+
             </div>
             <div class="col-md-12 mb-2">
               <br>
@@ -77,7 +78,7 @@ export default {
         validarNombre(){
             let regex1 = /^(([A-Za-z]+[/-/']?)*([A-Za-z]+)?\s)+([A-Za-z]+[/-/']?)*([A-Za-z]+)?$/;
             if (regex1.test(this.usuario.nombre)){
-                this.mensajeNombre = "";
+                this.mensajeNombre = "Nombre valido";
                 return true;
             } else {
                 this.mensajeNombre = "Nombre inválido";
@@ -87,7 +88,7 @@ export default {
         validarMail(){
             let regex2 =/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
             if (regex2.test(this.usuario.email)){
-                this.mensajeMail = "";
+                this.mensajeMail = "Email valido";
                 return true;
             } else {
                 this.mensajeMail = "Email inválido";
@@ -95,8 +96,8 @@ export default {
             }
         },
         validarEdad(){
-            if (this.usuario.edad >= 18 && this.usuario.edad <=100){
-                this.mensajeEdad = "";
+            if (this.usuario.edad >= 18 && this.usuario.edad <=50){
+                this.mensajeEdad = "Edad valida";
                 return true;
             } else {
                 this.mensajeEdad = "Edad inválida";
@@ -106,7 +107,7 @@ export default {
         validarPassword(){
             let regex3 = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%/^&/*])(?=.{8,})");
             if (regex3.test(this.usuario.password)){
-                this.mensajePassword = "";
+                this.mensajePassword = "Clave valida";
                 return true;
             } else {
                 this.mensajePassword = "Clave inválida"
@@ -123,7 +124,8 @@ export default {
     background: linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1))
 }
 .errorForm{
-    color:white;
+    color:red;
     font-size: 20px;
 }
+
 </style>
