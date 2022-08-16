@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import {use$Store} from 'vuex'
+import {useStore} from 'vuex'
 export default {
    name:"ItemComponent",
     props:['item'],
     setup(){
-        const store = use$Store()
+        const store = useStore()
         const aumentar = id => {store.commit('aumentar', id)}
         const disminuir = id => {store.commit('disminuir', id)}
         return {aumentar, disminuir}
