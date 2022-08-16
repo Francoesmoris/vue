@@ -36,8 +36,8 @@ export default createStore({
         console.log(error)
       }
     },
-    agregarCarrito({ commit}, producto) {
-     
+    agregarCarrito({commit}, producto) {
+    
       commit('setCarrito', producto)
     }
   },

@@ -32,8 +32,10 @@ import { computed } from 'vue'
 import {useStore} from 'vuex'
 import Item from './Item'
 import Footer from './Footer'
+
 export default {
    name:"CarritoComponent",
+   
     components: {Item, Footer},
     setup(){
         const store = useStore()
