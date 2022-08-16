@@ -36,10 +36,8 @@ export default createStore({
         console.log(error)
       }
     },
-    agregarCarrito({ commit, state }, producto) {
-      state.carrito (producto.id)
-        ? producto.cantidad = state.carrito[producto.id].cantidad + 1
-        : producto.cantidad = 1
+    agregarCarrito({ commit}, producto) {
+     
       commit('setCarrito', producto)
     }
   },
