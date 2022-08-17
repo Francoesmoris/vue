@@ -35,7 +35,7 @@ import Footer from './Footer'
 
 export default {
    name:"CarritoComponent",
-   
+  
     components: {Item, Footer},
     setup(){
         const store = useStore()
